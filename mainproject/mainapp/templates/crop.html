@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css' %}">
+    <title>Crop Prediction</title>
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="{%static 'images/img5.jpg' %}" alt="logo" height="50" width="20"></div>
+            <li><a href="{% url 'crop' %}">Home</a></li>
+            <li><a href="{% url 'about' %}"> About</a></li>
+            <li><a href="{% url 'index' %}">  ExploreCrops</a></li>
+            <li><a href="{% url 'advisor' %}">   CropAdvisor</a></li>
+            <li><a href="{% url 'contact' %}">   Contact </a></li>
+        </ul>
+    </nav>
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Art of Cultivation</p>
+                <p class="text-small">Farming is not just a job,it's a way of life.Farming is a profession of hope.
+                    Agriculture is not crop production as popular belief holds it's the production of food and fiber from the world's land and waters.
+                     Without agriculture, it is not possible to have a city, stock market, banks, university, church, or army. 
+                     Agriculture is the foundation of civilization and any stable economy</p>
+                </div>
+            <div class="secondHalf">
+                <img src="{%static 'images/img2.jpg' %}"alt="crop Image">
+             </div>
+        </div>
+    </section>
+</body>
+</html>

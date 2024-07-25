@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style5.css' %}">
+</head>
+<body>
+    <nav class="navbar background">
+    
+      <section >
+        <h2 class="heading">Recommendation to grow crops based on the soil nutrients and nature</h2>
+        <div class="style">
+        <a href="{% url 'newadvisor' %}" class="circle">Know which crop to grow in your soil</a>
+        <a href="{% url 'chart' %}" class="circle">Grow crop according to the soil nutrient_chart</a>
+        </div>
+      </section>
+  
+<div class="back-button" onclick="goBack()"></div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</nav>
+</html>

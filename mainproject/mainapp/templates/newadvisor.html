@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="{% static 'style5.css' %}">
+</head>
+<nav class="navbar background">
+<body>
+<main>
+<div>
+    <h2>Know what crop you can grow according to your soil's nature </h2>
+    <form method="post" action="{% url 'result2' %}" class="section">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Enter your soil's nutrients</legend>
+        <table>
+        <tr><td>
+        <label for="nitrogen">Enter nitrogen in soil(only two digits)</label></td>
+        <td>
+        <input type="text" id="nit" name="nit" required> </td> </tr>
+        <tr><td>
+        <label for="phosph">Enter phosphorous in soil (only two digits)</label></td>
+        <td>
+        <input type="text" id="phos" name="phos" required> </td> </tr>
+        <tr><td>
+        <label for="pottas">Enter potassium in soil (only two digits)</label></td>
+        <td>
+        <input type="text" id="pot" name="pot" required> </td> </tr>
+        <tr><td>
+        <label for="temper">Enter the temperature of your region (in °C)</label></td>
+        <td>
+        <input type="text" id="tem" name="tem" required> </td> </tr>
+        <tr><td>
+        <label for="humid">Enter the humidity (in %)</label></td>
+        <td>
+        <input type="text" id="hum" name="hum" required> </td> </tr>
+        <tr><td>
+        <label for="phval">Enter the pH value in soil(1-9)</label></td>
+        <td>
+        <input type="text" id="ph" name="ph" required> </td> </tr>
+        <tr><td>
+        <label for="rainfall">Enter the rainfall (in mm)</label></td>
+        <td>
+        <input type="text" id="rainf" name="rainf" required> </td> </tr>
+        <tr><td>
+            <div class="buttonbox">
+                <button type="submit" class="button">Recommend</button>
+            </div>  
+        </table>
+      </fieldset>
+    </form>
+    <div class="outt">
+    <h2>The crop you can grow is:</h2>
+      <h2 class="output">{{result2}}</h2>
+    </div>
+    </div>
+</main>
+<div class="back-button" onclick="goBack()"></div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</nav>
+</html>

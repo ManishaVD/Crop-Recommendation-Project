@@ -1,0 +1,79 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="{% static 'style5.css' %}">
+
+</head>
+<nav class="navbar background">
+   <header>
+    <div class="back-button" onclick="goBack()"></div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+   </header>
+<div>
+<h2 class="bc">Here we recommend you how much nutrients your crop would need to grow in your place</h2> 
+</div>
+<body>
+<main>
+<div>
+<h2>Find the essential amount of nutrients required in the soil for your crop</h2>
+<form method="post" action="{% url 'results' %}" class="section">
+    {% csrf_token %}
+  <fieldset>
+    <legend>Required Nutrient level of each crop</legend>
+     <table> <tr><td>
+    <label for="select">Select the crop to grow</label> </td><td>
+    <select name="crops" id="crop" onChange="ShowMenuChoice()">
+    <option value="rice">1.Rice</option>
+    <option value="maize">2.Maize</option>
+    <option value="chick">3.Chickpea</option>
+    <option value="kb">4.Kidneybeans</option>
+    <option value="pige">5.Pigeonpeas</option>
+    <option value="moth">6.Mothbeans</option>
+    <option value="mung">7.Mungbeans</option>
+    <option value="blackgram">8.Blackgram</option>
+    <option value="lentil">9.Lentil</option>
+    <option value="pom">10.Pomegranate</option>
+    <option value="ban">11.Banana</option>
+    <option value="man">12.Mango</option>
+    <option value="grape">13.Grapes</option>
+    <option value="water">14.Watermelon</option>
+    <option value="musk">15.Muskmelon</option>
+    <option value="apple">16.Apple</option>
+    <option value="orange">17.Orange</option>
+    <option value="papaya">18.Papaya</option>
+    <option value="coconut">19.Coconut</option>
+    <option value="cotton">20.Cotton</option>
+    <option value="jute">21.Jute</option>
+    <option value="coffee">22.Coffee</option>
+    </select></td></tr>
+    <tr><td>
+    <label for="crop">Enter the crop's number that you selected to grow:</label></td><td>
+    <input type="text" id="crop" name = "crop" required></td><tr><td>
+    <center>
+        <div class="buttonbox">
+            <button type="submit" class="button">Show</button>
+        </div>
+    </center>
+    </td></tr></table>
+
+    <div id="nutrient_chart">
+        <img src="data:image/png;base64,{{ chart_base64 }}">
+    </div>
+    {% for chart_base64 in chart_base64_list %}
+<img src="data:image/png;base64,{{ chart_base64 }}" alt="Pie Chart">
+{% endfor %}
+</fieldset>
+</form>
+</div>
+</main>
+
+</body>
+</nav>
+</html>

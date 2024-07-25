@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style2.css' %}">
+    <title>About Us</title>
+</head>
+<body>
+    <nav class="navbar background">
+    <section>
+    <header>
+        <h1>About The Page</h1>
+    </header>
+
+    <div class="container">
+        <h2>Our Page</h2>
+        <p>We are passionate about revolutionizing agriculture through advanced technology and data-driven solutions. Our crop recommendation website is designed to empower farmers with accurate and timely information, enabling them to make informed decisions and optimize their crop yields
+           With a team , we leverage the latest algorithms and machine learning techniques to analyze historical data, weather patterns, and other crucial factors. This analysis helps us recommend the best crops to plant in 
+           specific regions.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to assist farmers in increasing their productivity and promoting sustainable farming practices. By providing reliable crop recommendation based on parameters like Nitrogen, Phosphorous, and Potassium and
+            climate conditions like rainfall, humidity.
+            We aim to contribute to food security and support the agricultural community.
+            
+        </p>
+
+            <h2>Our Team</h2>
+            <ul>
+                <li>Manisha Viona Dsouza - MSc BDA student</li>
+                <li>Evangelin Shiney - MSc BDA student</li>
+            </ul>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, feel free to <button name="button" id="button" ><a href="{% url 'contact' %}">contact us</a></button></p>
+    </div>
+    </section>
+
+    <div class="back-button" onclick="goBack()"></div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
